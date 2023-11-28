@@ -1,0 +1,21 @@
+# Example code for Projected Rayleigh Quotient Iteration
+
+This is the code that was used to produce the results and figures for the _Projected Rayleigh Quotient Iteration_ (PRQI) paper.
+
+## Instructions for Example 1
+The first example visualises the basins of attraction for real symmetric 3x3 matrices, both for classic RQI and for PRQI. This example requires a C++ 11 compiler and Python 3. The C++ program generates the results, the Python script then visualises them. 
+
+To compile the C++ executable the [Blaze library](blaze) is required which itself relies on LAPACK. See the Blaze documentation for details on how to install both. To compile the program (e.g., using the Clang compiler) inside the `example1` directory run
+```bash
+$ clang++ -O3 -ogen_results -llapack main.cc
+```
+and then execute
+```bash
+$ ./gen_results 2000
+```
+to generate the results using 2000 runs (the more runs, the more accurate the final figures). To generate the figures, run (this assumes that both `numpy` and `matplotlib` are available)
+```
+$ mkdir figures
+$ python main.py
+```
+This generates the figures in a subdirectory `figures`. Note that the generated figures differ slightly from those in the paper. The published figures were post-processed to increase readability when printed in grayscale. 
