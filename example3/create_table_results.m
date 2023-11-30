@@ -3,9 +3,14 @@ function create_table_results(A, M, E, x)
 R_max = 80;
 norm_tol = 0.4;
 
+fprintf(['\\begin{tabular}{llcccccc}\\toprule\n',...
+         '  && \\multicolumn{3}{c}{PRQI} & \\multicolumn{3}{c}{Classic RQI}\n',...
+         '  \\\\\\cmidrule(lr){3-5}\\cmidrule(lr){6-8}\n',...
+         '  $n_{\\text{osc}}$ & $R$ & Eigenvalue & Index & \\# Its. & Eigenvalue & Index & \\# Its. \\\\\\midrule\n']);
+
 for cutoff = [35, 55]
     for k = 3 : 8
-        fprintf("Checking k = %i, cutoff = %i...", k / 2, cutoff);
+        fprintf("  %3.2g & %i &", k / 2, cutoff);
         skipped = 0;
 
         x0 = initial_vec(x, k, cutoff);
@@ -39,7 +44,6 @@ for cutoff = [35, 55]
             % Compute classic RQI result for comparison
             [mu_rqi, ~, cits] = classic_rqi_general(A, M, x0);
 
-            fprintf("done: ");
             % Compute the index of the eigenvalue for PRQI
             dists = abs(E - mu);
             [distmin, idxmin] = min(dists);
@@ -58,13 +62,14 @@ for cutoff = [35, 55]
                 idx_rqi = idxmin;
             end
     
-            fprintf(", PRQI = %f (idx = %d, its = %d), RQI = %f (idx = %d, its = %d)\n",...
+            fprintf(' % .5f & %3d & %2d & %.5f & %3d & %2d \\\\\n',...
                     mu, idx_prqi, its, mu_rqi, idx_rqi, cits);
         else
-            fprintf("skipped\n");
+            fprintf(" -- & -- & -- & -- & -- & --\\\\\n");
         end
     end
-    fprintf("\n");
 end
+
+fprintf('  \\bottomrule \n\\end{tabular}');
 
 end
