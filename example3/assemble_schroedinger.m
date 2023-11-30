@@ -34,9 +34,9 @@ if comp_pert_spectrum
     R = 35;
 
     x0 = initial_vec(x, n_osc, R);
-    x0 = x0 / norm(x0);
+    x0 = x0 / sqrt(x0'*M*x0);
 
-    Ep = eigs(A+B + 1i*M*(speye(size(A,1)) - x0*x0'), M, 250, -50, opts);
+    Ep = eigs(A+B + 1i*(M - (M*x0)*(M*x0)'), M, 250, -50, opts);
 end
 
 if comp_spectrum
