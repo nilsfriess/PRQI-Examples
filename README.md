@@ -20,6 +20,14 @@ $ python main.py
 ```
 This generates the figures in a subdirectory `figures`. Note that the generated figures differ slightly from those in the paper. The published figures were post-processed to increase readability when printed in grayscale. 
 
+## Instructions for Example 2
+This example only requires MATLAB. It was tested in MATLAB R2023b. To generate the results just run the script `generate_results.m` in MATLAB.
+
+To generate the figure directly from the command line, run
+```bash
+$ matlab -nodisplay -nosplash -nodesktop -r "run('generate_results.m');exit;"
+```
+
 ## Instructions for Example 3
 This example only requires MATLAB. It was tested in MATLAB R2023b. To generate the results just run the script `generate_results.m` in MATLAB. Note that this only creates Figure 5 of the paper and the results that were used to create Table 1. The other figures are simple plots of MATLAB vectors and are therefore not included here. 
 
