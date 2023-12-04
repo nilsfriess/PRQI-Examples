@@ -1,6 +1,6 @@
 # Example code for Projected Rayleigh Quotient Iteration
 
-This is the code that was used to produce the results and figures for the _Projected Rayleigh Quotient Iteration_ (PRQI) paper. All examples were only tested on Linux.
+This is the code that was used to produce the results and figures of [Friess, Gilbert, Scheichl: _A complex-projected Rayleigh quotient iteration for targeting interior eigenvalues_ (2023)](https://arxiv.org/). 
 
 ## Instructions for Example 1
 This example requires a C++ 11 compiler and Python 3. The C++ program generates the results, the Python script then visualises them. 
@@ -18,7 +18,7 @@ to generate the results using 2000 runs (the more runs, the more accurate the fi
 $ mkdir figures
 $ python main.py
 ```
-This generates the figures in a subdirectory `figures`. Note that the generated figures differ slightly from those in the paper. The published figures were post-processed to increase readability when printed in grayscale. 
+This generates the figures in a subdirectory `figures`. Note that the generated figures differ slightly from those in the paper. The published figures were post-processed to increase readability when printed in greyscale. 
 
 ## Instructions for Example 2
 This example only requires MATLAB. It was tested in MATLAB R2023b. To generate the results just run the script `generate_results.m` in MATLAB.
@@ -35,3 +35,4 @@ To generate the figure directly from the command line, run
 ```bash
 $ matlab -nodisplay -nosplash -nodesktop -r "run('generate_results.m');exit;"
 ```
+
