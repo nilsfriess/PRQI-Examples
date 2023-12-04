@@ -1,6 +1,6 @@
 # Example code for Projected Rayleigh Quotient Iteration
 
-This is the code that was used to produce the results and figures of [Friess, Gilbert, Scheichl: _A complex-projected Rayleigh quotient iteration for targeting interior eigenvalues_ (2023)](https://arxiv.org/). 
+This is the code that was used to produce the results and figures of [Friess, Gilbert, Scheichl: _A complex-projected Rayleigh quotient iteration for targeting interior eigenvalues_, 2023 (Preprint)](https://arxiv.org/). 
 
 ## Instructions for Example 1
 This example requires a C++ 11 compiler and Python 3. The C++ program generates the results, the Python script then visualises them. 
